@@ -28,6 +28,9 @@ class PostService {
     .then(({ data }) => data);
   }
 
+  deletePostById(id) {    
+    return this.postService.delete(`/post/delete/${id}`)
+  }
 
 }
 

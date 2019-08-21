@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import withAuth from '../components/withAuth.js';
 import UserNav from '../components/UserNav.js';
 import postService from '../services/post-service'
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 
 class Detail extends Component {
@@ -18,6 +18,7 @@ class Detail extends Component {
       link2: '',
       album2: '',
       artist2: '',
+      isRedirect: false,
     posts: {},
     myPosts: this.props.user.posts 
   }
@@ -28,6 +29,8 @@ class Detail extends Component {
   }
 
   componentDidMount = () => {
+    console.log(this.state, 'soc state');
+    
     const id = this.props.match.params.id
     postService.getPostsById(id)
     .then((posts) => {
@@ -39,16 +42,23 @@ class Detail extends Component {
     .catch((err) => console.log(err))
   }
 
-
+  handleDelete(id) {
+    postService.deletePostById(id)
+    .then((response) => {
+      console.log('JJJJJJJJJJJJJ');
+      this.setState({
+        isRedirect: true,
+      })
+    })
+  }
 
   render() {
-    console.log(this.state.myPosts)
     const user = this.props.user
-    const {year, title, song1, link1, album1, artist1, myPosts} = this.state
-    console.log(this.state);
+    const {year, title, song1, link1, album1, artist1, myPosts, isRedirect} = this.state
 
     return (
       <>
+        {isRedirect ? <Redirect to='/'/> : null}
         <UserNav />
         <div class="all-post-container">
         <>
@@ -56,7 +66,7 @@ class Detail extends Component {
               <p>{this.state.posts.title}</p> 
               <p>{this.state.posts.year}</p>
               <p>{this.state.posts.song1}</p>
-              <p>{this.state.posts.link1}</p>
+              <img src={this.state.posts.url1} alt='foto'></img>
               <p>{this.state.posts.album1}</p>
               <p>{this.state.posts.artist1}</p>
               <p>{this.state.posts.year2}</p>
@@ -72,8 +82,9 @@ class Detail extends Component {
           
               {this.props.isLoggedIn ? (
             <>
-              <Link to='/private'><p>delete</p></Link>
               <Link to='/private'><p>update</p></Link>
+
+              <button onClick = {() => {this.handleDelete(this.state.posts._id)}}>delete</button>
 
             </>
           ) : (

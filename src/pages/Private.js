@@ -68,6 +68,10 @@ class Private extends Component {
           <p>{post.year}</p>
           <p>{post.song1}</p> 
           <p>{post.link1}</p>
+          <p>{post.link2}</p>
+          <img src={post.url1} alt='super'/>
+          <img src={post.url2} alt='super'/>
+
           <p>{post.album1}</p>
           <p>{post.artist1}</p>
           <p>{post.user.username}</p>

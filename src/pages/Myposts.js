@@ -18,14 +18,16 @@ class Mypost extends Component {
       link2: '',
       album2: '',
       artist2: '',
-    myPosts: this.props.user.posts 
+    myPosts: []
   }
 
   componentDidMount = () => {
     this.props.getMe()
-    .then(() => {
+    postService.getPosts()
+    .then ((response) => {
+      console.log('RESPONSEEEEE',response)
         this.setState({
-          myPosts: this.props.user.posts 
+          myPosts: response
         })
       })
       .catch((err) => console.log(err))
@@ -52,6 +54,8 @@ class Mypost extends Component {
               <p>{post.album1}</p>
               <p>{post.artist1}</p>
               <p>{post.user.username}</p>
+              <img src={post.url1} alt='super'/>
+          <img src={post.url2} alt='super'/>
               <Link to={'/Detail/' + post._id}>See Post</Link>
           </div>
           </React.Fragment>)
