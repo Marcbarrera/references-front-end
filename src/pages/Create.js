@@ -82,8 +82,6 @@ class Create extends Component {
     .catch((err) => console.log(err))
   }
 
-
-
   render() {
     console.log(this.state.posts)
     const user = this.props.user
