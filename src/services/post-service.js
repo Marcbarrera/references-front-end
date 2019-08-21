@@ -13,8 +13,8 @@ class PostService {
   }
 
   postCreate(post) {
-    const {_id, year, title, song1, link1, album1, artist1, year2, song2, link2, album2, artist2, description, url1, url2} = post;
-    return this.postService.post('/post/create', {_id, year, title, song1, link1, album1, artist1, year2, song2, link2, album2, artist2, description, url1, url2})
+    const {_id, year, title, song1, link1, album1, artist1, year2, song2, link2, target1, target2,  album2, artist2, description, url1, url2} = post;
+    return this.postService.post('/post/create', {_id, year, title, song1, link1, target1, target2, album1, artist1, year2, song2, link2, album2, artist2, description, url1, url2})
       .then(({ data }) => data);
   }
 
@@ -27,6 +27,8 @@ class PostService {
     return this.postService.get('/post/' + id)
     .then(({ data }) => data);
   }
+
+  
 
   deletePostById(id) {    
     return this.postService.delete(`/post/delete/${id}`)

@@ -161,3 +161,68 @@ padding-top:50px;
   border-color: grey;
 margin:20px;
 }
+
+.card-container iframe{
+
+}
+
+.post-wrapper {
+  display: flex;
+  flex-direction: column;
+  /* background-color: yellow; */
+  /* margin-bottom:50px; */
+}
+
+.detail-container{
+  display:flex;
+  flex-direction: row;
+  max-width:1140px;
+}
+
+
+
+.detail-container .song1-cont{
+  display: flex;
+  flex:1;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+
+  /* background-color: blue; */
+
+}
+
+.detail-container .song2-cont{
+  display: flex;
+  flex:1;
+  flex-direction: column;
+  /* background-color: green; */
+  /* justify-content: center;
+  align-items: center; */
+}
+
+iframe{
+margin:auto;
+width:497px;
+height:280px;
+}
+
+.data-and-photo1{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 37px;
+  /* padding-left: */
+
+}
+
+.data-and-photo2{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 37px;
+
+
+}
+
+

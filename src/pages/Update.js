@@ -6,7 +6,7 @@ import FileComponent from '../components/FileComponent';
 
 import postService from '../services/post-service';
 
-class Create extends Component {
+class Update extends Component {
   state = {
     _id: this.props.user._id,
     year: 0,
@@ -15,8 +15,6 @@ class Create extends Component {
       link1: '',
       album1: '',
       artist1: '',
-      target1: '',
-      target2: '',
       year2: 0,
       song2: '',
       link2: '',
@@ -30,8 +28,8 @@ class Create extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    const {_id, year, title, song1, link1, album1, artist1, year2, song2, target1, target2, link2, album2, artist2, description, url1, url2} = this.state
-    postService.postCreate({_id, year, title, song1, link1, album1, artist1, target1, target2, year2, song2, link2, album2, artist2, description, url1, url2})
+    const {_id, year, title, song1, link1, album1, artist1, year2, song2, link2, album2, artist2, description, url1, url2} = this.state
+    postService.postCreate({_id, year, title, song1, link1, album1, artist1, year2, song2, link2, album2, artist2, description, url1, url2})
       .then((post) => {
         this.setState({
           redirect: true,
@@ -56,7 +54,7 @@ class Create extends Component {
   }
 
   render() {
-    const {song1,link1, album1, artist1, year, title, year2, song2, target1, target2, link2, album2, artist2, description, redirect} = this.state
+    const {song1,link1, album1, artist1, year, title, year2, song2, link2, album2, artist2, description, redirect} = this.state
     return (
       <>
         <UserNav />
@@ -69,12 +67,9 @@ class Create extends Component {
 
             <input  className='song1' id='song1' type='string' name='song1' value={song1} placeholder="song1" onChange={this.handleChange} />
             <input  className='artist1' id='artist1' type='string' name='artist1' value={artist1} placeholder="artist1" onChange={this.handleChange} />
-            
             <input  className='year' id='year' type='number' name='year' value={year} placeholder="year" onChange={this.handleChange} />
             <input  className='link1' id='link1' type='string' name='link1' value={link1} placeholder="link1" onChange={this.handleChange} />
             <input  className='album1' id='album1' type='string' name='album1' value={album1} placeholder="album1" onChange={this.handleChange} />
-            <input  className='target1' id='target1' type='string' name='target1' value={target1} placeholder="target1" onChange={this.handleChange} />
-
             <FileComponent addUrl={this.addUrl1}/>
 
             </div>
@@ -86,7 +81,6 @@ class Create extends Component {
             <input  className='year2' id='year2' type='number' name='year2' value={year2} placeholder="year2" onChange={this.handleChange} />
             <input  className='link2' id='link2' type='string' name='link2' value={link2} placeholder="link2" onChange={this.handleChange} />
             <input  className='album2' id='album2' type='string' name='album2' value={album2} placeholder="album2" onChange={this.handleChange} />
-            <input  className='target2' id='target2' type='string' name='target2' value={target2} placeholder="target2" onChange={this.handleChange} />
 
             <FileComponent addUrl={this.addUrl2}/>
 
@@ -109,4 +103,4 @@ class Create extends Component {
   }
 }
 
-export default withAuth(Create);
+export default withAuth(Update);
