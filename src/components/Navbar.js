@@ -6,7 +6,7 @@ class Navbar extends Component {
   render() {  
     return (
       <div id="header">
-        <div class="navbar">
+        <div className="navbar">
           {this.props.isLoggedIn ? (
             <>
               <Link to='/private'><p>profile</p></Link>
@@ -20,7 +20,7 @@ class Navbar extends Component {
           )}
           
         </div>
-        <div class="header-bottom">
+        <div className="header-bottom">
             <Link to='/'><h1>Reference</h1></Link>
           </div>
         </div>

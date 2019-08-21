@@ -54,8 +54,6 @@ class Private extends Component {
 
 
   render() {
-    const {year, title} = this.state
-  
     return (
       <>
         <UserNav />

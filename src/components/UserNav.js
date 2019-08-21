@@ -8,7 +8,7 @@ class UserNav extends Component {
         <>
         {this.props.user.username ? (
                     <>
-                    <section class="private-menu">
+                    <section className="private-menu">
                        <h1>Welcome {this.props.user.username}</h1>
                         <Link to={'/create'}>Create a post</Link>
                         <Link to={'/Myposts'}>My posts</Link>
