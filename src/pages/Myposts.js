@@ -42,9 +42,7 @@ class Mypost extends Component {
         <div className="all-post-container">
       
        { myPosts.map((post) => {
-
-          return  (
-          <React.Fragment key={post._id}>
+          return post.user._id === this.props.user._id ? <React.Fragment key={post._id}>
                   <div className="card-container">
             <div className="card-col1">
               <img src={post.url1} alt='super'/>
@@ -62,7 +60,7 @@ class Mypost extends Component {
             </div>
       
           </div>
-          </React.Fragment>)
+          </React.Fragment> : null
 
       })} 
       </div>

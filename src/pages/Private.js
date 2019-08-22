@@ -17,11 +17,8 @@ class Private extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     const {_id, year, title} = this.state
-    console.log(_id, year, title)
     postService.postCreate({_id, year, title})
-      .then((post) => {
-        console.log(post.data)
-      })
+      .then()
       .catch((err) => console.log(err))
 
       const {posts} = this.state
@@ -60,7 +57,6 @@ class Private extends Component {
       <div class="all-post-container">
 
       {this.state.posts.map((post) => {
-        console.log(post)
         if(this.props.user._id){
           return (<>
           <div className="card-container">

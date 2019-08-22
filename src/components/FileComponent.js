@@ -26,11 +26,9 @@ class FileUploadComponent extends Component {
       .child(filename)
       .getDownloadURL()
       .then(url => {
-        console.log(url)
         this.setState({ avatarURL: url })
         this.props.addUrl(url)
       });
-      console.log('url', this.state.avatarURL);
     };
  
   render() {

@@ -32,12 +32,10 @@ class Detail extends Component {
   }
 
   componentDidMount = () => {
-    console.log(this.state, 'soc state');
     
     const id = this.props.match.params.id
     postService.getPostsById(id)
     .then((posts) => {
-        console.log(posts)
       this.setState({
         posts
       })

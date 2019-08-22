@@ -13,7 +13,7 @@ class UserNav extends Component {
                         <Link to={'/create'}>Create a post</Link>
                         <Link to={'/Myposts'}>My posts</Link>
                         <Link to={'/private'}>Profile</Link>
-                        <Link to={'/{this.props.user._id}'}>Edit profile</Link>
+                        <Link to={`/${this.props.user._id}`}>Edit profile</Link>
                         </section>
                     </>
                 ) : null }
