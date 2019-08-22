@@ -76,7 +76,7 @@ class Detail extends Component {
         <div class="all-post-container">
         <>
         <div class="post-wrapper">
-                        <p>{this.state.posts.title}</p> 
+                        <h2>{this.state.posts.title}</h2> 
 
           <div class="detail-container">
 
@@ -85,11 +85,11 @@ class Detail extends Component {
               <iframe src={`https://youtube.com/embed/${this.state.posts.link1}`}></iframe>
                   <div className="data-and-photo1">
                     <div className="data1">
-                      <p>{this.state.posts.song1}</p>
-                      <p>{this.state.posts.artist1}</p>
-                      <p>{this.state.posts.album1}</p>
-                      <p>{this.state.posts.year}</p>
-                      <p>{this.state.posts.target1}</p>
+                      <p><span>Song: </span>{this.state.posts.song1}</p>
+                      <p><span>Artist: </span>{this.state.posts.artist1}</p>
+                      <p><span>Album: </span>{this.state.posts.album1}</p>
+                      <p><span>Year: </span>{this.state.posts.year}</p>
+                      <p><span>Target: </span>{this.state.posts.target1}</p>
                     </div>
                       <img src={this.state.posts.url1} alt='foto1'></img>
                   </div>
@@ -100,11 +100,11 @@ class Detail extends Component {
               <iframe src={`https://youtube.com/embed/${this.state.posts.link2}`}></iframe>
                   <div className="data-and-photo2">
                   <div className="data1">
-                      <p>{this.state.posts.song2}</p>
-                      <p>{this.state.posts.artist2}</p>
-                      <p>{this.state.posts.album2}</p>
-                      <p>{this.state.posts.year2}</p>
-                      <p>{this.state.posts.target2}</p>
+                      <p><span>Song: </span>{this.state.posts.song2}</p>
+                      <p><span>Artist: </span>{this.state.posts.artist2}</p>
+                      <p><span>Album: </span>{this.state.posts.album2}</p>
+                      <p><span>Year: </span>{this.state.posts.year2}</p>
+                      <p><span>Target: </span>{this.state.posts.target2}</p>
                     </div>
                       <img src={this.state.posts.url2} alt='foto2'></img>
                   </div>
@@ -112,16 +112,18 @@ class Detail extends Component {
               </div>
               {/* <p>{this.state.posts.user.username}</p> */}
           
-              <p>{this.state.posts.textarea}</p>
           
           
               </div>
 
               {this.props.isLoggedIn ? (
             <>
+                          <p className="description">{this.state.posts.description}</p>
+
+            <div className="buttons">
               <button onClick = {() => {this.handleUpdate(this.state.posts._id)}}>update</button>
               <button onClick = {() => {this.handleDelete(this.state.posts._id)}}>delete</button>
-
+              </div>
             </>
           ) : (
             <>

@@ -63,18 +63,21 @@ class Private extends Component {
         console.log(post)
         if(this.props.user._id){
           return (<>
-          <div class="card-container">
-          <p>{post.title}</p> 
-          <p>{post.year}</p>
-          <p>{post.song1}</p> 
-          <p>{post.link1}</p>
-          <p>{post.link2}</p>
-          <img src={post.url1} alt='super'/>
-          <img src={post.url2} alt='super'/>
+          <div className="card-container">
+            <div className="card-col1">
+              <img src={post.url1} alt='super'/>
+              <p>{post.song1}</p> 
+              <p>{post.artist1}</p>
+              </div>
 
-          <p>{post.album1}</p>
-          <p>{post.artist1}</p>
-          <p>{post.user.username}</p>
+            <div className="card-col1">
+              <img src={post.url2} alt='super'/>
+              <p>{post.song2}</p> 
+              <p>{post.artist2}</p>
+              <Link to={'/Detail/' + post._id}>See Post</Link>
+
+            </div>
+      
           </div>
           </>)
         } else {

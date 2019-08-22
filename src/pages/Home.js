@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import withAuth from '../components/withAuth.js';
 import UserNav from '../components/UserNav.js';
-import postService from '../services/post-service'
+import postService from '../services/post-service';
+import { Link, Redirect } from 'react-router-dom';
+
 
 
 class Home extends Component {
@@ -63,14 +65,21 @@ class Home extends Component {
         console.log(post)
         if(this.props.user._id){
           return (<>
-          <div class="card-container">
-          <p>{post.title}</p> 
-          <p>{post.year}</p>
-          <p>{post.song1}</p>
-          <p>{post.link1}</p>
-          <p>{post.album1}</p>
-          <p>{post.artist1}</p>
-          <p>{post.user.username}</p>
+                <div className="card-container">
+            <div className="card-col1">
+              <img src={post.url1} alt='super'/>
+              <p>{post.song1}</p> 
+              <p>{post.artist1}</p>
+              </div>
+
+            <div className="card-col1">
+              <img src={post.url2} alt='super'/>
+              <p>{post.song2}</p> 
+              <p>{post.artist2}</p>
+              <Link to={'/Detail/' + post._id}>See Post</Link>
+
+            </div>
+      
           </div>
           </>)
         } else {

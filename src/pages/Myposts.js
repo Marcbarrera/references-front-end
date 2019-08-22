@@ -25,7 +25,6 @@ class Mypost extends Component {
     this.props.getMe()
     postService.getPosts()
     .then ((response) => {
-      console.log('RESPONSEEEEE',response)
         this.setState({
           myPosts: response
         })
@@ -46,17 +45,22 @@ class Mypost extends Component {
 
           return  (
           <React.Fragment key={post._id}>
-          <div className="card-container">
-              <p>{post.title}</p> 
-              <p>{post.year}</p>
-              <p>{post.song1}</p>
-              <p>{post.link1}</p>
-              <p>{post.album1}</p>
-              <p>{post.artist1}</p>
-              <p>{post.user.username}</p>
+                  <div className="card-container">
+            <div className="card-col1">
               <img src={post.url1} alt='super'/>
-          <img src={post.url2} alt='super'/>
+              <p>{post.song1}</p> 
+              <p>{post.artist1}</p>
+              </div>
+
+            <div className="card-col1">
+              
+              <img src={post.url2} alt='super'/>
+              <p>{post.song2}</p> 
+              <p>{post.artist2}</p>
               <Link to={'/Detail/' + post._id}>See Post</Link>
+
+            </div>
+      
           </div>
           </React.Fragment>)
 

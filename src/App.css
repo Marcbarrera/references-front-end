@@ -71,14 +71,15 @@ a:visited{
 .all-post-container{
   /* background-color: ; */
   min-height:76vh;
-  border-width: 1px;
-  border-style: solid;
-  border-color: grey;
+  /* border-width: 1px; */
+  /* border-style: solid; */
+  /* border-color: grey; */
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   max-width:1140px;
   width:100%;
   margin: auto;
+  margin-top:30px;
 }
 
 .create-form-container{
@@ -105,16 +106,24 @@ margin-top:50px;
   flex-direction: column;
   align-content: center;
   justify-content: center;
+  margin-bottom:100px;
+  /* background-color: red; */
 
 
 }
 .create-form-container textarea{
-  margin:20px;
-  height:200px;
+  margin-top:-20px;
+  margin-bottom:50px;
 
+  height:200px;
+ 
 
 }
-
+button {
+  margin:auto;
+  width:90px
+  
+}
 .create-form-container form button{ 
   max-width: 100px;
 }
@@ -157,20 +166,49 @@ padding-top:50px;
 }
 
 .card-container{
-  border: solid 1px;
-  border-color: grey;
-margin:20px;
+  /* border: solid 1px;
+  border-color: grey; */
+  margin:20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-width:500px;
+  /* background-color: red; */
+  justify-content: space-evenly
+}
+.card-container .card-col1{
+  display:flex;
+  flex-direction: column;
+  max-height: 350px;
+  /* background-color: red; */
 }
 
-.card-container iframe{
+.card-col1 p{
+
+margin: 3px;
 
 }
+.card-col1 a{
+  margin-top: 5px;
+  color:red;
+}
+
+.card-col1 img{
+max-width:225px;
+}
+
+
 
 .post-wrapper {
   display: flex;
   flex-direction: column;
   /* background-color: yellow; */
   /* margin-bottom:50px; */
+  max-width: 1140px;
+  justify-content: space-between;
+  align-content: center;
+  width:100%;
+  margin-bottom: 100px;
 }
 
 .detail-container{
@@ -221,8 +259,33 @@ height:280px;
   flex-direction: row;
   justify-content: space-between;
   margin: 37px;
-
-
+}
+.data-and-photo1 img{
+  max-width: 225px;
 }
 
+.data-and-photo2 img{
+  max-width: 225px;
+}
 
+.data1 span{
+  font-weight: bold;
+}
+
+.buttons{
+  display:flex;
+  flex-direction: row;
+  /* background-color: red; */
+  margin-bottom: 100px;
+  justify-content:center;
+  margin: auto;
+}
+
+.description {
+  padding: 0px 40px;
+  margin-bottom: 190px;
+}
+
+h2{
+  padding-left: 40px;
+}
