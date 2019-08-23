@@ -41,7 +41,7 @@ class Signup extends Component {
           <input type='submit' value='Signup' />
         </form>
 
-        <p> 
+        <p> If you alredy have an account please
           <Link to={'/login'}> Login</Link>
         </p>
 

@@ -36,7 +36,7 @@ class Login extends Component {
         </form>
 
         <p>
-            <Link to={'/signup'}> Signup</Link>
+            If you don't have an account please <Link to={'/signup'}> Signup</Link>
         </p>
       </section>
     )

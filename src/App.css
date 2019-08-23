@@ -289,3 +289,45 @@ height:280px;
 h2{
   padding-left: 40px;
 }
+
+
+.lo-sig-container{
+  display:flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  background-color: goldenrod;
+  align-items: center;
+
+}
+
+.lo-sig-container form {
+  margin-left: 20px;
+}
+
+.lo-sig-container form label{
+  margin-left:20px;
+}
+.lo-sig-container form input{
+  margin-left:10px;
+}
+
+.lo-sig-container  p{
+  display:flex;
+  flex-direction: row;
+margin-left:200px;
+
+}
+
+.lo-sig-container  a{
+color:white;
+font-weight: bold;
+margin-left: 10px;
+/* background-color: red; */
+
+}
+
+.lo-sig-container  button{
+  color:white;
+  font-weight: bold;
+  
+  }
